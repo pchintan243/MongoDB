@@ -4,7 +4,7 @@ const path = require('path');
 const hbs = require('hbs');
 // For hashing  --> securing password
 const bcrypt = require('bcryptjs');
-const port = 3000;
+const port = 3100;
 
 require("./db/conn");
 
@@ -94,6 +94,11 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.get("*", (req, res) => {
+    res.render("pageNotFound");
+})
+
+
 // If we store the pass as a hash value so we set logic between get the data and save the data
 // Logic in register.js file
 // const securePassword = async (password) => {
@@ -107,7 +112,6 @@ app.post('/login', async (req, res) => {
 //     // console.log(passwordMatch);
 // }
 // securePassword("chintan@2423");
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);
