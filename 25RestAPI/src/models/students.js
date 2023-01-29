@@ -25,6 +25,10 @@ const student25 = new mongoose.Schema({
     address: {
         type: String,
         required: true,
+    },
+    date: {
+        type: String,
+        default: new Date()
     }
 });
 

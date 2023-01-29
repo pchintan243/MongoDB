@@ -4,7 +4,7 @@ const app = express();
 require("./db/conn");
 
 const Student = require("./models/students");
-const port = 8000;
+const port = 7900;
 
 app.use(express.json()); // Use for show postman body data
 
@@ -51,7 +51,7 @@ app.post('/students', async (req, res) => {
         res.status(400).send(e);
     }
     console.log(req.body);
-    res.send("25 tutorial Rest API");
+    // res.send("25 tutorial Rest API");
 });
 
 
