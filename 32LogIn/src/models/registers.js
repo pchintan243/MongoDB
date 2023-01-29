@@ -27,10 +27,6 @@ const loginSchema = new mongoose.Schema({
     Password: {
         type: String,
         // required : true
-    },
-    Cpassword: {
-        type: String,
-        // required : true
     }
 
 });
