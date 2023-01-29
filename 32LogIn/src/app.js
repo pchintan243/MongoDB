@@ -47,8 +47,7 @@ app.post('/register', async (req, res) => {
                 Email: req.body.Email,
                 Gender: req.body.Gender,
                 Phone: req.body.Phone,
-                Password: req.body.Password,
-                Cpassword: req.body.Cpassword
+                Password: req.body.Password
             });
             const registered = await registerEmployee.save();
             res.status(201).render("index");
@@ -58,7 +57,7 @@ app.post('/register', async (req, res) => {
         }
     }
     catch (e) {
-        res.status(400).send(e);
+        res.status(400).send("User already exist");
     }
 });
 
